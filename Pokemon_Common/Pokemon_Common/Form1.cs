@@ -6,5 +6,10 @@ namespace Pokemon_Common
         {
             InitializeComponent();
         }
+
+        private void runBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
