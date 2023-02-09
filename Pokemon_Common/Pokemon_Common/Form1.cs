@@ -9,6 +9,7 @@ namespace Pokemon_Common
         character player;
         character enemy;
 
+        private bool isCollapsed;
        
         public Form1()
         {
@@ -69,6 +70,21 @@ namespace Pokemon_Common
         }
 
         private void atkBtn_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void pkmsBtn_Click(object sender, EventArgs e)
+        {
+            this.pokemonsPnl.Visible = true;
+        }
+
+        private void pokemonsPnl_Paint(object sender, PaintEventArgs e)
+        {
+            
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
         {
             
         }

@@ -33,15 +33,15 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.skillBtn = new System.Windows.Forms.Button();
+            this.runBtn = new System.Windows.Forms.Button();
+            this.pkmsBtn = new System.Windows.Forms.Button();
+            this.atkBtn = new System.Windows.Forms.Button();
             this.pokemonsPnl = new System.Windows.Forms.Panel();
             this.pikcBtn = new System.Windows.Forms.Button();
             this.crlBtn = new System.Windows.Forms.Button();
             this.chrBtn = new System.Windows.Forms.Button();
             this.krBtn = new System.Windows.Forms.Button();
-            this.skillBtn = new System.Windows.Forms.Button();
-            this.runBtn = new System.Windows.Forms.Button();
-            this.pkmsBtn = new System.Windows.Forms.Button();
-            this.atkBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -49,6 +49,7 @@
             this.nameBox = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -83,6 +84,7 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.Controls.Add(this.pokemonsPnl);
             this.panel1.Controls.Add(this.skillBtn);
             this.panel1.Controls.Add(this.runBtn);
             this.panel1.Controls.Add(this.pkmsBtn);
@@ -92,6 +94,57 @@
             this.panel1.Size = new System.Drawing.Size(450, 215);
             this.panel1.TabIndex = 8;
             // 
+            // skillBtn
+            // 
+            this.skillBtn.FlatAppearance.BorderSize = 0;
+            this.skillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.skillBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.skillBtn.Location = new System.Drawing.Point(234, 52);
+            this.skillBtn.Name = "skillBtn";
+            this.skillBtn.Size = new System.Drawing.Size(167, 44);
+            this.skillBtn.TabIndex = 4;
+            this.skillBtn.Text = "Skill";
+            this.skillBtn.UseVisualStyleBackColor = true;
+            // 
+            // runBtn
+            // 
+            this.runBtn.FlatAppearance.BorderSize = 0;
+            this.runBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.runBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.runBtn.Location = new System.Drawing.Point(234, 119);
+            this.runBtn.Name = "runBtn";
+            this.runBtn.Size = new System.Drawing.Size(167, 44);
+            this.runBtn.TabIndex = 3;
+            this.runBtn.Text = "RUN";
+            this.runBtn.UseVisualStyleBackColor = true;
+            this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
+            // 
+            // pkmsBtn
+            // 
+            this.pkmsBtn.FlatAppearance.BorderSize = 0;
+            this.pkmsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pkmsBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pkmsBtn.Location = new System.Drawing.Point(40, 119);
+            this.pkmsBtn.Name = "pkmsBtn";
+            this.pkmsBtn.Size = new System.Drawing.Size(188, 44);
+            this.pkmsBtn.TabIndex = 1;
+            this.pkmsBtn.Text = "Pokemons";
+            this.pkmsBtn.UseVisualStyleBackColor = true;
+            this.pkmsBtn.Click += new System.EventHandler(this.pkmsBtn_Click);
+            // 
+            // atkBtn
+            // 
+            this.atkBtn.FlatAppearance.BorderSize = 0;
+            this.atkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.atkBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.atkBtn.Location = new System.Drawing.Point(49, 52);
+            this.atkBtn.Name = "atkBtn";
+            this.atkBtn.Size = new System.Drawing.Size(167, 44);
+            this.atkBtn.TabIndex = 0;
+            this.atkBtn.Text = "Attack";
+            this.atkBtn.UseVisualStyleBackColor = true;
+            this.atkBtn.Click += new System.EventHandler(this.atkBtn_Click);
+            // 
             // pokemonsPnl
             // 
             this.pokemonsPnl.BackColor = System.Drawing.Color.Transparent;
@@ -100,10 +153,12 @@
             this.pokemonsPnl.Controls.Add(this.crlBtn);
             this.pokemonsPnl.Controls.Add(this.chrBtn);
             this.pokemonsPnl.Controls.Add(this.krBtn);
-            this.pokemonsPnl.Location = new System.Drawing.Point(372, 321);
+            this.pokemonsPnl.Location = new System.Drawing.Point(0, 0);
             this.pokemonsPnl.Name = "pokemonsPnl";
             this.pokemonsPnl.Size = new System.Drawing.Size(450, 215);
             this.pokemonsPnl.TabIndex = 9;
+            this.pokemonsPnl.Visible = false;
+            this.pokemonsPnl.Paint += new System.Windows.Forms.PaintEventHandler(this.pokemonsPnl_Paint);
             // 
             // pikcBtn
             // 
@@ -156,56 +211,6 @@
             this.krBtn.Text = "Kyurem";
             this.krBtn.UseVisualStyleBackColor = true;
             this.krBtn.Click += new System.EventHandler(this.krBtn_Click);
-            // 
-            // skillBtn
-            // 
-            this.skillBtn.FlatAppearance.BorderSize = 0;
-            this.skillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.skillBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.skillBtn.Location = new System.Drawing.Point(234, 52);
-            this.skillBtn.Name = "skillBtn";
-            this.skillBtn.Size = new System.Drawing.Size(167, 44);
-            this.skillBtn.TabIndex = 4;
-            this.skillBtn.Text = "Skill";
-            this.skillBtn.UseVisualStyleBackColor = true;
-            // 
-            // runBtn
-            // 
-            this.runBtn.FlatAppearance.BorderSize = 0;
-            this.runBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.runBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.runBtn.Location = new System.Drawing.Point(234, 119);
-            this.runBtn.Name = "runBtn";
-            this.runBtn.Size = new System.Drawing.Size(167, 44);
-            this.runBtn.TabIndex = 3;
-            this.runBtn.Text = "RUN";
-            this.runBtn.UseVisualStyleBackColor = true;
-            this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
-            // 
-            // pkmsBtn
-            // 
-            this.pkmsBtn.FlatAppearance.BorderSize = 0;
-            this.pkmsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pkmsBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.pkmsBtn.Location = new System.Drawing.Point(40, 119);
-            this.pkmsBtn.Name = "pkmsBtn";
-            this.pkmsBtn.Size = new System.Drawing.Size(188, 44);
-            this.pkmsBtn.TabIndex = 1;
-            this.pkmsBtn.Text = "Pokemons";
-            this.pkmsBtn.UseVisualStyleBackColor = true;
-            // 
-            // atkBtn
-            // 
-            this.atkBtn.FlatAppearance.BorderSize = 0;
-            this.atkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.atkBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.atkBtn.Location = new System.Drawing.Point(49, 52);
-            this.atkBtn.Name = "atkBtn";
-            this.atkBtn.Size = new System.Drawing.Size(167, 44);
-            this.atkBtn.TabIndex = 0;
-            this.atkBtn.Text = "Attack";
-            this.atkBtn.UseVisualStyleBackColor = true;
-            this.atkBtn.Click += new System.EventHandler(this.atkBtn_Click);
             // 
             // label3
             // 
@@ -268,6 +273,10 @@
             this.progressBar2.TabIndex = 12;
             this.progressBar2.Value = 100;
             // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -275,7 +284,6 @@
             this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(1104, 685);
-            this.Controls.Add(this.pokemonsPnl);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.progressBar2);
             this.Controls.Add(this.nameBox);
@@ -322,5 +330,6 @@
         private Button crlBtn;
         private Button chrBtn;
         private Button krBtn;
+        private System.Windows.Forms.Timer timer1;
     }
 }
