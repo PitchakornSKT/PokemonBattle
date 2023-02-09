@@ -38,6 +38,7 @@ namespace Pokemon_Common
             this.pictureBox1.Image = selectedPokemon.getImage();
             this.nameBox.Text = selectedPokemon.getName();
             this.label3.Text = ("What will \nKyurem do?");
+            
         }
 
         private void pikcBtn_Click(object sender, EventArgs e)
@@ -67,6 +68,7 @@ namespace Pokemon_Common
             this.pictureBox1.Image = selectedPokemon.getImage();
             this.nameBox.Text = selectedPokemon.getName();
             this.label3.Text = ("What will \nCeruledge do?");
+            
         }
 
         private void atkBtn_Click(object sender, EventArgs e)
@@ -77,6 +79,8 @@ namespace Pokemon_Common
         private void pkmsBtn_Click(object sender, EventArgs e)
         {
             this.pokemonsPnl.Visible = true;
+            
+            
         }
 
         private void pokemonsPnl_Paint(object sender, PaintEventArgs e)
@@ -85,6 +89,16 @@ namespace Pokemon_Common
         }
 
         private void timer1_Tick(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void backBtn_Click(object sender, EventArgs e)
+        {
+            this.pokemonsPnl.Visible = false;
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
         {
             
         }

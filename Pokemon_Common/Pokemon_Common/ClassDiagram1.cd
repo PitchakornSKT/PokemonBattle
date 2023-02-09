@@ -1,2 +1,46 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<ClassDiagram /> 
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Pokemon_Common.Pokemons.ceruledge" Collapsed="true">
+    <Position X="7.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pokemons\ceruledge.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pokemon_Common.Pokemons.character" Collapsed="true">
+    <Position X="12" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAEQAAAAAAAAAAABAAAAAAAAAEQAAAgABEAAAAAAA=</HashCode>
+      <FileName>Pokemons\character.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pokemon_Common.Pokemons.charizard" Collapsed="true">
+    <Position X="14.25" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pokemons\charizard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pokemon_Common.Pokemons.kyurem">
+    <Position X="9.75" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pokemons\kyurem.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pokemon_Common.Pokemons.pikachu" Collapsed="true">
+    <Position X="12" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pokemons\pikachu.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Pokemon_Common.Pokemons.yveltal" Collapsed="true">
+    <Position X="16.5" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Pokemons\yveltal.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

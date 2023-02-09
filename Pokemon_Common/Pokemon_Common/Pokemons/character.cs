@@ -11,7 +11,7 @@ namespace Pokemon_Common.Pokemons
         protected string name;
         public int charNum;
         public int atk;
-        public double hp;
+        public int hp;
         public Bitmap _image;
 
         public character() 
@@ -29,6 +29,10 @@ namespace Pokemon_Common.Pokemons
             return this.name;
         }
 
+        public int getHP()
+        {
+            return this.hp;
+        }
         public void takeDamge(int dam)
         {
             this.hp -= dam;
