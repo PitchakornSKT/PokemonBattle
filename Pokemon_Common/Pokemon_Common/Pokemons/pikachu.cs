@@ -13,8 +13,7 @@ namespace Pokemon_Common.Pokemons
             this.name = "Pikachu";
             Random random = new Random();
             this._image = Properties.Resources._25;
-            this.hp = 274;
-            this.atk = random.Next(103, 229);
+            
         }
     }
 }

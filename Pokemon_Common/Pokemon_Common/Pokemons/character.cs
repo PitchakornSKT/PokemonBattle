@@ -10,14 +10,11 @@ namespace Pokemon_Common.Pokemons
     {
         protected string name;
         public int charNum;
-        public int atk;
-        public int hp;
+        public double atk;
+        public double hp = 100;
         public Bitmap _image;
 
-        public character() 
-        { 
         
-        }
 
         public Bitmap getImage()
         {
@@ -29,13 +26,35 @@ namespace Pokemon_Common.Pokemons
             return this.name;
         }
 
-        public int getHP()
+        public double getHP()
         {
             return this.hp;
         }
-        public void takeDamge(int dam)
+
+        public double getAtk()
         {
-            this.hp -= dam;
+            return this.atk;
+        }
+
+
+        public void takeDamge(int dam, int acc )
+        {
+            Random rnd = new Random();
+            int roll = rnd.Next(1, 21);
+            
+            
+            if (roll >= acc)
+            {
+                if (roll == 20)
+                {
+                    hp -=  dam * 1.5;
+                }
+                else
+                {
+                    hp -=  dam;
+                }
+            }
+
         }
     }
 }

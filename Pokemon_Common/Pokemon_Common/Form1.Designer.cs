@@ -33,16 +33,16 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.skillBtn = new System.Windows.Forms.Button();
+            this.runBtn = new System.Windows.Forms.Button();
+            this.pkmsBtn = new System.Windows.Forms.Button();
+            this.atkBtn = new System.Windows.Forms.Button();
             this.pokemonsPnl = new System.Windows.Forms.Panel();
             this.backBtn = new System.Windows.Forms.Button();
             this.pikcBtn = new System.Windows.Forms.Button();
             this.crlBtn = new System.Windows.Forms.Button();
             this.chrBtn = new System.Windows.Forms.Button();
             this.krBtn = new System.Windows.Forms.Button();
-            this.skillBtn = new System.Windows.Forms.Button();
-            this.runBtn = new System.Windows.Forms.Button();
-            this.pkmsBtn = new System.Windows.Forms.Button();
-            this.atkBtn = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
@@ -50,7 +50,8 @@
             this.nameBox = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.progressBar2 = new System.Windows.Forms.ProgressBar();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timerEndAtk = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.panel1.SuspendLayout();
@@ -94,6 +95,58 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(450, 215);
             this.panel1.TabIndex = 8;
+            // 
+            // skillBtn
+            // 
+            this.skillBtn.FlatAppearance.BorderSize = 0;
+            this.skillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.skillBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.skillBtn.Location = new System.Drawing.Point(234, 52);
+            this.skillBtn.Name = "skillBtn";
+            this.skillBtn.Size = new System.Drawing.Size(167, 44);
+            this.skillBtn.TabIndex = 4;
+            this.skillBtn.Text = "Skill";
+            this.skillBtn.UseVisualStyleBackColor = true;
+            this.skillBtn.Click += new System.EventHandler(this.skillBtn_Click);
+            // 
+            // runBtn
+            // 
+            this.runBtn.FlatAppearance.BorderSize = 0;
+            this.runBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.runBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.runBtn.Location = new System.Drawing.Point(234, 119);
+            this.runBtn.Name = "runBtn";
+            this.runBtn.Size = new System.Drawing.Size(167, 44);
+            this.runBtn.TabIndex = 3;
+            this.runBtn.Text = "RUN";
+            this.runBtn.UseVisualStyleBackColor = true;
+            this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
+            // 
+            // pkmsBtn
+            // 
+            this.pkmsBtn.FlatAppearance.BorderSize = 0;
+            this.pkmsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.pkmsBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.pkmsBtn.Location = new System.Drawing.Point(40, 119);
+            this.pkmsBtn.Name = "pkmsBtn";
+            this.pkmsBtn.Size = new System.Drawing.Size(188, 44);
+            this.pkmsBtn.TabIndex = 1;
+            this.pkmsBtn.Text = "Pokemons";
+            this.pkmsBtn.UseVisualStyleBackColor = true;
+            this.pkmsBtn.Click += new System.EventHandler(this.pkmsBtn_Click);
+            // 
+            // atkBtn
+            // 
+            this.atkBtn.FlatAppearance.BorderSize = 0;
+            this.atkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.atkBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.atkBtn.Location = new System.Drawing.Point(49, 52);
+            this.atkBtn.Name = "atkBtn";
+            this.atkBtn.Size = new System.Drawing.Size(167, 44);
+            this.atkBtn.TabIndex = 0;
+            this.atkBtn.Text = "Attack";
+            this.atkBtn.UseVisualStyleBackColor = true;
+            this.atkBtn.Click += new System.EventHandler(this.atkBtn_Click);
             // 
             // pokemonsPnl
             // 
@@ -179,57 +232,6 @@
             this.krBtn.UseVisualStyleBackColor = true;
             this.krBtn.Click += new System.EventHandler(this.krBtn_Click);
             // 
-            // skillBtn
-            // 
-            this.skillBtn.FlatAppearance.BorderSize = 0;
-            this.skillBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.skillBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.skillBtn.Location = new System.Drawing.Point(234, 52);
-            this.skillBtn.Name = "skillBtn";
-            this.skillBtn.Size = new System.Drawing.Size(167, 44);
-            this.skillBtn.TabIndex = 4;
-            this.skillBtn.Text = "Skill";
-            this.skillBtn.UseVisualStyleBackColor = true;
-            // 
-            // runBtn
-            // 
-            this.runBtn.FlatAppearance.BorderSize = 0;
-            this.runBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.runBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.runBtn.Location = new System.Drawing.Point(234, 119);
-            this.runBtn.Name = "runBtn";
-            this.runBtn.Size = new System.Drawing.Size(167, 44);
-            this.runBtn.TabIndex = 3;
-            this.runBtn.Text = "RUN";
-            this.runBtn.UseVisualStyleBackColor = true;
-            this.runBtn.Click += new System.EventHandler(this.runBtn_Click);
-            // 
-            // pkmsBtn
-            // 
-            this.pkmsBtn.FlatAppearance.BorderSize = 0;
-            this.pkmsBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.pkmsBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.pkmsBtn.Location = new System.Drawing.Point(40, 119);
-            this.pkmsBtn.Name = "pkmsBtn";
-            this.pkmsBtn.Size = new System.Drawing.Size(188, 44);
-            this.pkmsBtn.TabIndex = 1;
-            this.pkmsBtn.Text = "Pokemons";
-            this.pkmsBtn.UseVisualStyleBackColor = true;
-            this.pkmsBtn.Click += new System.EventHandler(this.pkmsBtn_Click);
-            // 
-            // atkBtn
-            // 
-            this.atkBtn.FlatAppearance.BorderSize = 0;
-            this.atkBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.atkBtn.Font = new System.Drawing.Font("Upheaval TT (BRK)", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.atkBtn.Location = new System.Drawing.Point(49, 52);
-            this.atkBtn.Name = "atkBtn";
-            this.atkBtn.Size = new System.Drawing.Size(167, 44);
-            this.atkBtn.TabIndex = 0;
-            this.atkBtn.Text = "Attack";
-            this.atkBtn.UseVisualStyleBackColor = true;
-            this.atkBtn.Click += new System.EventHandler(this.atkBtn_Click);
-            // 
             // label3
             // 
             this.label3.AutoSize = true;
@@ -294,9 +296,10 @@
             this.progressBar2.TabIndex = 12;
             this.progressBar2.Value = 100;
             // 
-            // timer1
+            // timerEndAtk
             // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            this.timerEndAtk.Interval = 2000;
+            this.timerEndAtk.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // Form1
             // 
@@ -351,7 +354,8 @@
         private Button crlBtn;
         private Button chrBtn;
         private Button krBtn;
-        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Timer timerEndAtk;
         private Button backBtn;
+        private System.Windows.Forms.Timer timer2;
     }
 }

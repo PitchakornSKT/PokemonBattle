@@ -13,8 +13,7 @@ namespace Pokemon_Common.Pokemons
             this.name = "Kyurem";
             Random random = new Random();
             this._image = Properties.Resources._4070;
-            this.hp = 454;
-            this.atk = random.Next(238, 394);
+            
         }
     }
 }

@@ -13,8 +13,7 @@ namespace Pokemon_Common.Pokemons
             this.name = "Yveltal";
             Random random = new Random();
             this._image = Properties.Resources._716;
-            this.hp = 456;
-            this.atk = random.Next(240, 397);
+            
         }
     }
 }

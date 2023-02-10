@@ -13,8 +13,7 @@ namespace Pokemon_Common.Pokemons
             this.name = "Ceruledge";
             Random random = new Random();
             this._image = Properties.Resources._937;
-            this.hp = 354;
-            this.atk = random.Next(229, 383);
+            
         }
     }
 }

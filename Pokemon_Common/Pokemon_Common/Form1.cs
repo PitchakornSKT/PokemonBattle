@@ -20,6 +20,7 @@ namespace Pokemon_Common
             Pokemons.Add(new pikachu());
             Pokemons.Add(new charizard());
             Pokemons.Add(new ceruledge());
+            Pokemons.Add(new yveltal());
         }
 
         private void runBtn_Click(object sender, EventArgs e)
@@ -29,7 +30,8 @@ namespace Pokemon_Common
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            player = selectedPokemon = Pokemons[0];
+            enemy = selectedPokemon = Pokemons[4];
         }
 
         private void krBtn_Click(object sender, EventArgs e)
@@ -73,14 +75,25 @@ namespace Pokemon_Common
 
         private void atkBtn_Click(object sender, EventArgs e)
         {
+            enemy.takeDamge(10, 5);
+            if (enemy.hp > 0)
+            {
+                progressBar2.Value = Convert.ToInt32(enemy.hp);
+            }
+            else
+            {
+                progressBar2.Value = 0;
+            }
+            timerEndAtk.Enabled = true;
+            atkBtn.Enabled = false;
+            skillBtn.Enabled = false;
+            pkmsBtn.Enabled = false;
             
         }
 
         private void pkmsBtn_Click(object sender, EventArgs e)
         {
             this.pokemonsPnl.Visible = true;
-            
-            
         }
 
         private void pokemonsPnl_Paint(object sender, PaintEventArgs e)
@@ -90,6 +103,21 @@ namespace Pokemon_Common
 
         private void timer1_Tick(object sender, EventArgs e)
         {
+            timerEndAtk.Enabled = false;
+
+            
+            player.takeDamge(30, 15);
+            if (player.hp > 0)
+            {
+                progressBar1.Value = Convert.ToInt32(player.hp);
+            }
+            else
+            {
+                progressBar1.Value = 0;
+            }
+            atkBtn.Enabled = true;
+            skillBtn.Enabled = true;
+            pkmsBtn.Enabled = true;
             
         }
 
@@ -100,6 +128,24 @@ namespace Pokemon_Common
 
         private void progressBar1_Click(object sender, EventArgs e)
         {
+            
+        }
+
+        private void skillBtn_Click(object sender, EventArgs e)
+        {
+            enemy.takeDamge(30, 15);
+            if (enemy.hp > 0)
+            {
+                progressBar2.Value = Convert.ToInt32(enemy.hp);
+            }
+            else
+            {
+                progressBar2.Value = 0;
+            }
+            timerEndAtk.Enabled = true;
+            atkBtn.Enabled = false;
+            skillBtn.Enabled = false;
+            pkmsBtn.Enabled = false;
             
         }
     }
