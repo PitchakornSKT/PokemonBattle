@@ -1,4 +1,5 @@
 using Pokemon_Common.Pokemons;
+using System.Media;
 
 namespace Pokemon_Common
 {
@@ -10,7 +11,9 @@ namespace Pokemon_Common
         character enemy;
 
         private bool isCollapsed;
-       
+        SoundPlayer _soundPlayer = new SoundPlayer( soundLocation: @"C:\Users\User\Documents\GitHub\PokemonBattle\Pokemon_Common\Pokemon_Common\sound\pokeBtn.wav");
+        SoundPlayer _musicPlayer = new SoundPlayer( soundLocation: @"C:\Users\User\Documents\GitHub\PokemonBattle\Pokemon_Common\Pokemon_Common\sound\Pokemon_battle.wav");
+
         public Form1()
         {
             InitializeComponent();
@@ -21,11 +24,14 @@ namespace Pokemon_Common
             Pokemons.Add(new charizard());
             Pokemons.Add(new ceruledge());
             Pokemons.Add(new yveltal());
+
+            _musicPlayer.Play();
         }
 
         private void runBtn_Click(object sender, EventArgs e)
         {                        
             Application.Exit();
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -40,6 +46,7 @@ namespace Pokemon_Common
             this.pictureBox1.Image = selectedPokemon.getImage();
             this.nameBox.Text = selectedPokemon.getName();
             this.label3.Text = ("What will \nKyurem do?");
+            _soundPlayer.Play();
             
         }
 
@@ -49,6 +56,7 @@ namespace Pokemon_Common
             this.pictureBox1.Image = selectedPokemon.getImage();
             this.nameBox.Text = selectedPokemon.getName();
             this.label3.Text = ("What will \nPikachu do?");
+            _soundPlayer.Play();
         }
 
         private void chrBtn_Click(object sender, EventArgs e)
@@ -57,6 +65,7 @@ namespace Pokemon_Common
             this.pictureBox1.Image = selectedPokemon.getImage();
             this.nameBox.Text = selectedPokemon.getName();
             this.label3.Text = ("What will \nCharizard do?");
+            _soundPlayer.Play();
         }
 
         private void label3_Click(object sender, EventArgs e)
@@ -70,12 +79,13 @@ namespace Pokemon_Common
             this.pictureBox1.Image = selectedPokemon.getImage();
             this.nameBox.Text = selectedPokemon.getName();
             this.label3.Text = ("What will \nCeruledge do?");
-            
+            _soundPlayer.Play();
+
         }
 
         private void atkBtn_Click(object sender, EventArgs e)
         {
-            enemy.takeDamge(10, 5);
+            enemy.takeDamge(30, 15);
             if (enemy.hp > 0)
             {
                 progressBar2.Value = Convert.ToInt32(enemy.hp);
@@ -88,12 +98,15 @@ namespace Pokemon_Common
             atkBtn.Enabled = false;
             skillBtn.Enabled = false;
             pkmsBtn.Enabled = false;
-            
+
+
+            _soundPlayer.Play();
         }
 
         private void pkmsBtn_Click(object sender, EventArgs e)
         {
             this.pokemonsPnl.Visible = true;
+            _soundPlayer.Play();
         }
 
         private void pokemonsPnl_Paint(object sender, PaintEventArgs e)
@@ -118,6 +131,7 @@ namespace Pokemon_Common
             atkBtn.Enabled = true;
             skillBtn.Enabled = true;
             pkmsBtn.Enabled = true;
+
             
         }
 
@@ -146,7 +160,8 @@ namespace Pokemon_Common
             atkBtn.Enabled = false;
             skillBtn.Enabled = false;
             pkmsBtn.Enabled = false;
-            
+
+            _soundPlayer.Play();
         }
     }
 }
